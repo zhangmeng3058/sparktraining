@@ -19,7 +19,7 @@ public class JavaWordCount {
     public static void main(String[] args) throws IOException {
         String masterUrl = "local[1]";
         String inputFile = "data/text/words";
-        String outputFile = "/tmp/meng.zhang/output";
+        String outputFile = "/tmp/meng/output";
 
         if (args.length > 0) {
             masterUrl = args[0];
