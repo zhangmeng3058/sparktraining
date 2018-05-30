@@ -1,4 +1,4 @@
-package sparkCore;
+package org.china.meng.spark.core;
 
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
@@ -18,7 +18,7 @@ import java.util.Iterator;
 public class JavaWordCount {
     public static void main(String[] args) throws IOException {
         String masterUrl = "local[1]";
-        String inputFile = "data/text/words";
+        String inputFile = "/data/text/words";
         String outputFile = "/tmp/meng/output";
 
         if (args.length > 0) {
@@ -29,7 +29,7 @@ public class JavaWordCount {
         }
 
         SparkConf conf = new
-                SparkConf().setMaster(masterUrl).setAppName("myWordCount");
+                SparkConf().setMaster(masterUrl).setAppName("wordcount");
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<String> input = sc.textFile(inputFile);
 //        input.cache();
